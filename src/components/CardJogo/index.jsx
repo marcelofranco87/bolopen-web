@@ -36,7 +36,7 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, 
 
     return (
         <div className="rounded-xl border border-grey-300 p-4 text-center space-y-4 max-w-[100%]">
-            <span className="text-sm md:text-base text-gray-700 font-bold">{ gameTime }</span>
+            <span className="text-sm md:text-base text-grey-700 font-bold">{ gameTime }</span>
 
             <form className="flex space-x-4 p-2 justify-center items-center">
                 <span className="uppercase text-sm">{homeTeam}</span>
@@ -48,9 +48,9 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, 
                     onChange={formik.handleChange}
                     onBlur={formik.handleSubmit}
                     disabled={disabled}
-                    className="self-stretch bg-red-300/[0.2] max-w-[15%] text-red-700 text-xl text-center"
+                    className="self-stretch bg-green-300/[0.2] max-w-[15%] text-green-700 text-xl text-center"
                 />
-                <span className="text-red-500 font-bold">X</span>
+                <span className="text-green-500 font-bold">X</span>
                 <input
                     type="number"
                     name="awayTeamScore"
@@ -58,7 +58,7 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, 
                     onChange={formik.handleChange}
                     onBlur={formik.handleSubmit}
                     disabled={disabled}
-                    className="self-stretch bg-red-300/[0.2] max-w-[15%] text-red-700 text-xl text-center"
+                    className="self-stretch bg-green-300/[0.2] max-w-[15%] text-green-700 text-xl text-center"
                 />
                 <img src={`src/assets/bandeiras/${awayTeam}.png`} alt="" className="max-w-[15%]" />
                 <span className="uppercase text-sm">{awayTeam}</span>

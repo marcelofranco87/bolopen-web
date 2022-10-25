@@ -51,7 +51,7 @@ export const Signup = () => {
 
     return (
         <div>
-            <header className="p-4 border-b border-red-300">
+            <header className="p-4 border-b border-green-300">
                 <div className="container flex justify-center max-w-xl">
                     <img src={logo} className="w-32 md:w-40" />
                 </div>
@@ -109,7 +109,7 @@ export const Signup = () => {
                     />
 
                     <button                        
-                        className="block w-full bg-red-500 text-center text-white text-base px-6 py-3 rounded-xl disabled:opacity-50"
+                        className="block w-full bg-green-500 text-center text-white text-base px-6 py-3 rounded-xl disabled:opacity-50"
                         type="submit"
                         disabled={!formik.isValid || formik.isSubmitting}                        
                     >

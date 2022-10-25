@@ -62,7 +62,7 @@ export const Profile = () => {
     return (
         <>
 
-            <header className="bg-red-500 p-4 text-white">            
+            <header className="bg-green-500 p-4 text-white">            
                 <div className="container max-w-3xl flex justify-between">
                     <img src={logo} className="w-28 md:w-40" />
                     <div className="p-2 cursor-pointer" onClick={logout}>
@@ -72,7 +72,7 @@ export const Profile = () => {
             </header>
 
             <main className="space-y-6">
-                <section id="header" className="bg-red-500 text-white">
+                <section id="header" className="bg-green-500 text-white">
                     <div className="container max-w-3xl space-y-2 p-4">
                         <a href="/dashboard">
                             <Icon name="back" className="w-10" />
@@ -84,7 +84,7 @@ export const Profile = () => {
 
                 <section id="content" className="container max-w-3xl p-4 space-y-4">
 
-                    <h2 className="text-xl text-red-500 font-bold">Seus palpites</h2>
+                    <h2 className="text-xl text-green-500 font-bold">Seus palpites</h2>
 
                     <DateSelect currentDate={currentDate} onChange={setCurrentDate} />
 
