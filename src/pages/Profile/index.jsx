@@ -42,7 +42,7 @@ export const Profile = () => {
     })
 
     const isLoading = games.loading || guesses.loading
-    const hasError = games.error || guesses.hasError
+    const hasError = games.hasError || guesses.hasError
     const isLoaded = !isLoading && !hasError
     const logout = () => setAuth({})
 
