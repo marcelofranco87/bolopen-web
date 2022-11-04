@@ -40,7 +40,7 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, 
 
             <form className="flex space-x-4 p-2 justify-center items-center">
                 <span className="uppercase text-sm">{homeTeam}</span>
-                <img src={`src/assets/bandeiras/${homeTeam}.png`} alt="" className="max-w-[15%]" />
+                <img src={`/bandeiras/${homeTeam}.png`} alt={`${homeTeam}`} className="max-w-[15%]" />
                 <input
                     type="number"
                     name="homeTeamScore"
@@ -60,7 +60,7 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, 
                     disabled={disabled}
                     className="self-stretch bg-green-300/[0.2] max-w-[15%] text-green-700 text-xl text-center"
                 />
-                <img src={`src/assets/bandeiras/${awayTeam}.png`} alt="" className="max-w-[15%]" />
+                <img src={`/bandeiras/${awayTeam}.png`} alt={`${awayTeam}`} className="max-w-[15%]" />
                 <span className="uppercase text-sm">{awayTeam}</span>
             </form>
         </div>
