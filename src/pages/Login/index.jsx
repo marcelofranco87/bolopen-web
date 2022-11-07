@@ -31,9 +31,8 @@ export const Login = () => {
                     username: values.email,
                     password: values.password
                 }
-            })
+            })            
             
-            console.log(res.data)
             setAuth(res.data)
             // const auth = localStorage.getItem('auth')
             // console.log(JSON.parse(auth))            
