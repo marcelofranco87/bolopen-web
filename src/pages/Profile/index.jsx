@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLocalStorage, useAsyncFn } from 'react-use'
+import { useSessionStorage, useAsyncFn } from 'react-use'
 import { Navigate } from 'react-router-dom'
 import { format, formatISO } from 'date-fns'
 import axios from 'axios'
@@ -12,7 +12,7 @@ export const Profile = () => {
 
     const [currentDate, setCurrentDate] = useState(formatISO(new Date(2022, 10, 20)))
 
-    const [auth, setAuth] = useLocalStorage('auth', {})
+    const [auth, setAuth] = useSessionStorage('auth', {})
 
     const [guesses, fetchGuesses] = useAsyncFn(async () => {
         const res = await axios({

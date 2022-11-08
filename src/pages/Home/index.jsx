@@ -1,5 +1,5 @@
 import React from "react"
-import { useLocalStorage } from 'react-use'
+import { useSessionStorage } from 'react-use'
 import { Navigate, useLocation } from 'react-router-dom'
 
 import { Message } from '~/components';
@@ -9,7 +9,7 @@ import logo from '~/assets/logo/logo-open-vinho.svg'
 
 export function Home() { 
 
-  const [auth] = useLocalStorage('auth', {})
+  const [auth] = useSessionStorage('auth', {})
 
   const location = useLocation()
 

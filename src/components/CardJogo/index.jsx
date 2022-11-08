@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { useLocalStorage, useAsyncFn } from 'react-use'
+import { useSessionStorage, useAsyncFn } from 'react-use'
 
 const validationSchema = Yup.object().shape({
     homeTeamScore: Yup.string().required(),
@@ -10,7 +10,7 @@ const validationSchema = Yup.object().shape({
 
 export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, awayTeamScore, disabled }) => {
 
-    const [auth] = useLocalStorage('auth')
+    const [auth] = useSessionStorage('auth')
 
     const formik = useFormik({
         onSubmit: (values) => {

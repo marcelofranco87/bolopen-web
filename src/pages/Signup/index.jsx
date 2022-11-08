@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { useLocalStorage } from 'react-use'
+import { useSessionStorage } from 'react-use'
 import { Navigate, useNavigate } from 'react-router-dom'
 
 import logo from '~/assets/logo/logo-open-branco.svg'
@@ -19,7 +19,7 @@ export const Signup = () => {
 
     const navigate = useNavigate()
 
-    const [auth, setAuth] = useLocalStorage('auth', {})
+    const [auth, setAuth] = useSessionStorage('auth', {})
 
     const formik = useFormik({
         initialValues: {
@@ -36,7 +36,7 @@ export const Signup = () => {
                 data: values
             })
             
-            localStorage.setItem('auth', JSON.stringify(res.data))
+            sessionStorage.setItem('auth', JSON.stringify(res.data))
             
             navigate('/', { state: `Conta criada com sucesso!` })
             

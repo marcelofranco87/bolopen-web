@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { useLocalStorage } from 'react-use'
+import { useSessionStorage } from 'react-use'
 import { Navigate } from 'react-router-dom'
 
 import logo from '~/assets/logo/logo-open-branco.svg'
@@ -15,7 +15,7 @@ const validationSchema = Yup.object().shape({
 
 export const Login = () => {
 
-    const [auth, setAuth] = useLocalStorage('auth', {})
+    const [auth, setAuth] = useSessionStorage('auth', {})
 
     const formik = useFormik({
         initialValues: {
@@ -34,7 +34,7 @@ export const Login = () => {
             })            
             
             setAuth(res.data)
-            // const auth = localStorage.getItem('auth')
+            // const auth = sessionStorage.getItem('auth')
             // console.log(JSON.parse(auth))            
             
         },
