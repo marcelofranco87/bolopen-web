@@ -8,7 +8,7 @@ const validationSchema = Yup.object().shape({
     awayTeamScore: Yup.string().required(),
 })
 
-export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, awayTeamScore, disabled }) => {
+export const CardJogo = ({ gameId, homeTeam, awayTeam, gameDay, gameTime, homeTeamScore, awayTeamScore, disabled }) => {
 
     const [auth] = useSessionStorage('auth')
 
@@ -36,6 +36,7 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameTime, homeTeamScore, 
 
     return (
         <div className="rounded-xl border border-grey-300 p-4 text-center space-y-4 max-w-[100%]">
+            <span className="text-sm md:text-base text-grey-700 font-bold">{ gameDay }, </span>
             <span className="text-sm md:text-base text-grey-700 font-bold">{ gameTime }</span>
 
             <form className="flex space-x-4 p-2 justify-center items-center">
