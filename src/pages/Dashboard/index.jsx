@@ -53,7 +53,7 @@ export const Dashboard = () => {
     }, [])
 
     useEffect(() => {
-        fetchGames({ group: currentGroup })
+        fetchGames({ groupLetter: currentGroup })
         fetchGuesses()
     }, [currentGroup])
 
