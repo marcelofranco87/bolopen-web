@@ -37,7 +37,7 @@ export const Dashboard = () => {
         const res = await axios({
             method: 'get',
             baseURL: import.meta.env.VITE_API_URL,
-            url: '/games',
+            url: '/games',            
             params
         })
 
