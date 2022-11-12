@@ -106,6 +106,7 @@ export const Dashboard = () => {
                             gameTime={format(new Date(game.gameTime), 'H:mm')}
                             homeTeamScore={guesses?.value?.[game.id]?.homeTeamScore || 0}
                             awayTeamScore={guesses?.value?.[game.id]?.awayTeamScore || 0}
+                            disabled={new Date(game.gameTime) > new Date() ? false : true}
                             />
                         ))}                        
                     

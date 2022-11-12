@@ -49,7 +49,7 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameDay, gameTime, homeTe
                     onChange={formik.handleChange}
                     onBlur={formik.handleSubmit}
                     disabled={disabled}
-                    className="self-stretch bg-green-300/[0.2] max-w-[15%] text-green-700 text-xl text-center"
+                    className={`self-stretch ${disabled ? `bg-grey-300/[0.2]` : `bg-green-300/[0.2]`} max-w-[15%] text-green-700 text-xl text-center`}
                 />
                 <span className="text-green-500 font-bold">X</span>
                 <input
@@ -59,7 +59,7 @@ export const CardJogo = ({ gameId, homeTeam, awayTeam, gameDay, gameTime, homeTe
                     onChange={formik.handleChange}
                     onBlur={formik.handleSubmit}
                     disabled={disabled}
-                    className="self-stretch bg-green-300/[0.2] max-w-[15%] text-green-700 text-xl text-center"
+                    className={`self-stretch ${disabled ? `bg-grey-300/[0.2]` : `bg-green-300/[0.2]`} max-w-[15%] text-green-700 text-xl text-center`}
                 />
                 <img src={`/bandeiras/${awayTeam}.png`} alt={`${awayTeam}`} className="max-w-[15%]" />
                 <span className="uppercase text-sm">{awayTeam}</span>
