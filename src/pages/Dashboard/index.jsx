@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import { DateSelect } from '~/components/DateSelect'
-import { GroupSelect } from '~/components/GroupSelect'
 import { useSessionStorage, useAsyncFn } from 'react-use'
 import { Navigate } from 'react-router-dom'
 import axios from 'axios'
@@ -9,7 +7,7 @@ import { ptBR } from 'date-fns/locale'
 
 import logo from '~/assets/logo/logo-open-vermelho.svg'
 
-import { Icon, CardJogo } from '~/components'
+import { Icon, CardJogo, GroupSelect, DateSelect } from '~/components'
 
 export const Dashboard = () => {
 

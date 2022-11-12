@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react'
 import { useSessionStorage, useAsyncFn } from 'react-use'
 import { Navigate } from 'react-router-dom'
-import { format, formatISO } from 'date-fns'
 import axios from 'axios'
+import { format, formatISO } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
-import { Icon, CardJogo, DateSelect } from '~/components'
+import { Icon, CardJogo, GroupSelect, DateSelect } from '~/components'
 
 import logo from '~/assets/logo/logo-open-vermelho.svg'
 
 export const Profile = () => {    
 
-    const [currentDate, setCurrentDate] = useState(formatISO(new Date(2022, 10, 20)))
+    // const [currentDate, setCurrentDate] = useState(formatISO(new Date(2022, 10, 20)))
+    const [currentGroup, setCurrentGroup] = useState('a')
 
     const [auth, setAuth] = useSessionStorage('auth', {})
 
@@ -51,9 +53,14 @@ export const Profile = () => {
     }, [])
 
     useEffect(() => {
-        fetchGames({ gameTime: currentDate })
+        fetchGames({ groupLetter: currentGroup })
         fetchGuesses()
-    }, [currentDate])
+    }, [currentGroup])
+
+    // useEffect(() => {
+    //     fetchGames({ gameTime: currentDate })
+    //     fetchGuesses()
+    // }, [currentDate])
 
     if (!auth?.user?.id) {
         return <Navigate to="/" replace={true} />
@@ -86,7 +93,8 @@ export const Profile = () => {
 
                     <h2 className="text-xl text-green-500 font-bold">Seus palpites</h2>
 
-                    <DateSelect currentDate={currentDate} onChange={setCurrentDate} />
+                    {/* <DateSelect currentDate={currentDate} onChange={setCurrentDate} /> */}
+                    <GroupSelect currentGroup={currentGroup} onChange={setCurrentGroup} />
 
                     <div className="space-y-4">
 
@@ -101,6 +109,7 @@ export const Profile = () => {
                             gameId={game.id}
                             homeTeam={game.homeTeam}
                             awayTeam={game.awayTeam}
+                            gameDay={format(new Date(game.gameTime), "d 'de' MMMM", {locale: ptBR})}
                             gameTime={format(new Date(game.gameTime), 'H:mm')}
                             homeTeamScore={guesses?.value?.[game.id]?.homeTeamScore || 0}
                             awayTeamScore={guesses?.value?.[game.id]?.awayTeamScore || 0}
