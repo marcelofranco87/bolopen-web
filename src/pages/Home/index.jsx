@@ -4,8 +4,8 @@ import { Navigate, useLocation } from 'react-router-dom'
 
 import { Message } from '~/components';
 
-import imagemCapa from '~/assets/imagem/img2.png'
-import logo from '~/assets/logo/logo-open-vinho.svg'
+import imagemCapa from '~/assets/imagem/open.png'
+import logo from '~/assets/logo/logo-open-fundo-escuro.svg'
 
 export function Home() { 
 
