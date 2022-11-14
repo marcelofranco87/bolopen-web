@@ -12,6 +12,29 @@ export const GroupSelect = ({ currentGroup, onChange }) => {
         onChange(next)
     }
 
+    // let sectionTitle = ''
+
+    // if (currentGroup.charCodeAt(0) > 'h'.charCodeAt(0)) {
+    //     switch(currentGroup) {
+    //         case 'i':
+    //             sectionTitle = 'oitavas de final'
+    //             break
+    //         case 'j':
+    //             sectionTitle = 'quartas de final'
+    //             break
+    //         case 'k':
+    //             sectionTitle = 'semifinal'
+    //             break
+    //         case 'l':
+    //             sectionTitle = 'terceiro lugar'
+    //             break
+    //         case 'm':
+    //             sectionTitle = 'final'
+    //     }
+    // } else {
+    //     sectionTitle = `grupo ${currentGroup}`
+    // }
+
     return (
         <div className="p-4 flex space-x-4 justify-between">
             <Icon name="arrowLeft" className="w-6 text-green-500" onClick={prevGroup} />
