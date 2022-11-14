@@ -5,7 +5,7 @@ import axios from 'axios'
 import { format, formatISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
-import logo from '~/assets/logo/logo-open-vermelho.svg'
+import logo from '~/assets/logo/logo-open-fundo-claro.svg'
 
 import { Icon, CardJogo, GroupSelect, DateSelect } from '~/components'
 

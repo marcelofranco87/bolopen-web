@@ -7,7 +7,7 @@ import { ptBR } from 'date-fns/locale'
 
 import { Icon, CardJogo, GroupSelect, DateSelect } from '~/components'
 
-import logo from '~/assets/logo/logo-open-vermelho.svg'
+import logo from '~/assets/logo/logo-open-fundo-claro.svg'
 
 export const Profile = () => {    
 

@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { useSessionStorage } from 'react-use'
 import { Navigate } from 'react-router-dom'
 
-import logo from '~/assets/logo/logo-open-branco.svg'
+import logo from '~/assets/logo/logo-open-fundo-branco.svg'
 
 import { Icon, Input } from '~/components'
 
