@@ -12,7 +12,7 @@ import { Icon, CardJogo, GroupSelect, DateSelect } from '~/components'
 export const Dashboard = () => {
 
     // const [currentDate, setCurrentDate] = useState(formatISO(new Date(2022, 10, 20)))
-    const [currentGroup, setCurrentGroup] = useState('a')
+    const [currentGroup, setCurrentGroup] = useState('i') //Group Stage: useState('a')
     const [auth] = useSessionStorage('auth', {})
 
     const [guesses, fetchGuesses] = useAsyncFn(async () => {

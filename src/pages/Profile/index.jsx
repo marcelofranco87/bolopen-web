@@ -12,7 +12,7 @@ import logo from '~/assets/logo/logo-open-fundo-claro.svg'
 export const Profile = () => {    
 
     // const [currentDate, setCurrentDate] = useState(formatISO(new Date(2022, 10, 20)))
-    const [currentGroup, setCurrentGroup] = useState('a')
+    const [currentGroup, setCurrentGroup] = useState('i') //Group Stage: useState('a')
 
     const [auth, setAuth] = useSessionStorage('auth', {})
 

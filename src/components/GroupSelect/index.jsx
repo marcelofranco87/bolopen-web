@@ -1,44 +1,56 @@
 import { Icon } from '~/components/Icon'
 
-export const GroupSelect = ({ currentGroup, onChange }) => {    
+export const GroupSelect = ({ currentGroup, onChange }) => {   
+    
+    // Group Stage
+    // const prevGroup = () => {
+    //     const prev = (currentGroup == 'a' ? 'h' : String.fromCharCode(currentGroup.charCodeAt(0) - 1))
+    //     onChange(prev)
+    // }
 
+    // const nextGroup = () => {
+    //     const next = (currentGroup == 'h' ? 'a' : String.fromCharCode(currentGroup.charCodeAt(0) + 1))
+    //     onChange(next)
+    // }
+
+    // Knockout Stage
     const prevGroup = () => {
-        const prev = (currentGroup == 'a' ? 'h' : String.fromCharCode(currentGroup.charCodeAt(0) - 1))
+        const prev = (currentGroup == 'i' ? 'm' : String.fromCharCode(currentGroup.charCodeAt(0) - 1))
         onChange(prev)
     }
 
     const nextGroup = () => {
-        const next = (currentGroup == 'h' ? 'a' : String.fromCharCode(currentGroup.charCodeAt(0) + 1))
+        const next = (currentGroup == 'm' ? 'i' : String.fromCharCode(currentGroup.charCodeAt(0) + 1))
         onChange(next)
     }
 
-    // let sectionTitle = ''
+    let sectionTitle = ''
 
-    // if (currentGroup.charCodeAt(0) > 'h'.charCodeAt(0)) {
-    //     switch(currentGroup) {
-    //         case 'i':
-    //             sectionTitle = 'oitavas de final'
-    //             break
-    //         case 'j':
-    //             sectionTitle = 'quartas de final'
-    //             break
-    //         case 'k':
-    //             sectionTitle = 'semifinal'
-    //             break
-    //         case 'l':
-    //             sectionTitle = 'terceiro lugar'
-    //             break
-    //         case 'm':
-    //             sectionTitle = 'final'
-    //     }
-    // } else {
-    //     sectionTitle = `grupo ${currentGroup}`
-    // }
+    if (currentGroup.charCodeAt(0) > 'h'.charCodeAt(0)) {
+        switch(currentGroup) {
+            case 'i':
+                sectionTitle = 'oitavas de final'
+                break
+            case 'j':
+                sectionTitle = 'quartas de final'
+                break
+            case 'k':
+                sectionTitle = 'semifinal'
+                break
+            case 'l':
+                sectionTitle = 'terceiro lugar'
+                break
+            case 'm':
+                sectionTitle = 'final'
+        }
+    } else {
+        sectionTitle = `grupo ${currentGroup}`
+    }
 
     return (
         <div className="p-4 flex space-x-4 justify-between">
             <Icon name="arrowLeft" className="w-6 text-green-500" onClick={prevGroup} />
-            <span className="uppercase font-bold">grupo {currentGroup}</span>
+            <span className="uppercase font-bold">{sectionTitle}</span>
             <Icon name="arrowRight" className="w-6 text-green-500" onClick={nextGroup} />
         </div>
     )
